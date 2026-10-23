@@ -1,0 +1,47 @@
+{
+  "AAAA1111": [
+    {
+      "key": "ATTA4444",
+      "version": 2,
+      "data": {
+        "key": "ATTA4444",
+        "version": 2,
+        "itemType": "attachment",
+        "parentItem": "AAAA1111",
+        "linkMode": "imported_file",
+        "title": "Full Text PDF",
+        "contentType": "application/pdf",
+        "filename": "wang-2024-inkstone.pdf"
+      }
+    },
+    {
+      "key": "NOTE5555",
+      "version": 1,
+      "data": {
+        "key": "NOTE5555",
+        "version": 1,
+        "itemType": "note",
+        "parentItem": "AAAA1111",
+        "note": "<p>Reading notes: check <b>section 3</b> on citekeys.</p>"
+      }
+    }
+  ],
+  "ATTA4444": [
+    {
+      "key": "ANNO6666",
+      "version": 1,
+      "data": {
+        "key": "ANNO6666",
+        "version": 1,
+        "itemType": "annotation",
+        "parentItem": "ATTA4444",
+        "annotationType": "highlight",
+        "annotationText": "Inkstone matters",
+        "annotationComment": "Key claim for the paper",
+        "annotationPageLabel": "3",
+        "annotationColor": "#ffd400",
+        "dateModified": "2024-06-03 09:00:00"
+      }
+    }
+  ]
+}

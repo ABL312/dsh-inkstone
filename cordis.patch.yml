@@ -1,0 +1,61 @@
+# dsh-inkstone bundle patch.
+#
+# 四插件 + Trilium 官方 MCP 连接行。凭据全部来自环境变量：
+#   TRILIUM_ETAPI_TOKEN  必需；Trilium Options -> ETAPI 生成。
+#   TRILIUM_ETAPI_URL    可选；默认 http://127.0.0.1:8080（ETAPI 与 MCP 同源）。
+#   ZOTERO_API_KEY       可选；仅 Web API 写回时使用。
+#   ZOTERO_API_USER_ID   可选；默认 0（本地 API）。
+#   INKSTONE_PROJECT_DIR 可选；流水线默认项目目录，缺省为当前会话工作目录。
+#
+# 未设置 TRILIUM_ETAPI_TOKEN 时，MCP 行保持禁用，ETAPI 插件仍会激活并在
+# 调用时报出可操作的凭据错误。
+
+- insert:
+    - id: inkstone-trilium-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      disabled: !!js "!process.env.TRILIUM_ETAPI_TOKEN"
+      config:
+        serverName: trilium
+        transport: streamable-http
+        url: !!js "process.env.TRILIUM_ETAPI_URL ? process.env.TRILIUM_ETAPI_URL.replace(/\/$/, '') + '/mcp' : 'http://127.0.0.1:8080/mcp'"
+        headers:
+          Authorization: !!js "'Bearer ' + process.env.TRILIUM_ETAPI_TOKEN"
+        toolCallTimeoutMs: 30000
+        failOnStartupError: false
+
+    - id: inkstone-trilium
+      name: dsh-inkstone/trilium-paper
+      config:
+        tokenEnv: TRILIUM_ETAPI_TOKEN
+        defaultParentNoteId: null
+        advancedTools: false
+        timeoutMs: 15000
+
+    - id: inkstone-zotero
+      name: dsh-inkstone/zotero-ink
+      config:
+        localApiUrl: http://127.0.0.1:23119
+        dataDir: null
+        bibFiles: []
+        citationStyle: gb-7714-2015-numeric
+        advancedTools: false
+        timeoutMs: 15000
+
+    - id: inkstone-typst
+      name: dsh-inkstone/typst-brush
+      config:
+        binaryPath: null
+        fontPaths: []
+        maxHealRounds: 3
+        timeoutMs: 120000
+        advancedTools: false
+
+    - id: inkstone-flow
+      name: dsh-inkstone/inkstone-flow
+      config:
+        projectDir: null
+        runsDir: .inkstone/runs
+        recipesDir: null
+        defaultParentNoteId: null
+        publish: true
+        advancedTools: false

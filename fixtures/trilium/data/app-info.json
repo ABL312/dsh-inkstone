@@ -1,0 +1,10 @@
+{
+  "appVersion": "0.106.0",
+  "dbVersion": 233,
+  "syncVersion": 38,
+  "buildDate": "2026-10-01T00:00:00Z",
+  "buildRevision": "c0ffee1234567890",
+  "dataDirectory": "C:\\Users\\example\\AppData\\Roaming\\trilium-data",
+  "clipperProtocolVersion": "1.0",
+  "utcDateTime": "2026-10-23T13:49:00.000Z"
+}

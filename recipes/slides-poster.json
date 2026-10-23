@@ -1,0 +1,84 @@
+{
+  "id": "slides-poster",
+  "title": "幻灯片/海报",
+  "description": "Typst 模板脚手架（slides-zh 或 poster-zh）→ 人工/模型写作（检查点）→ 自愈编译 → SVG/PNG 导出 → 可选发布到 Trilium → 运行报告。",
+  "scenario": "slides",
+  "inputs": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "演示/海报标题"
+    },
+    "author": {
+      "type": "string",
+      "description": "作者（可选）"
+    },
+    "template": {
+      "type": "string",
+      "default": "slides-zh",
+      "description": "slides-zh 或 poster-zh"
+    },
+    "parentNoteId": {
+      "type": "string",
+      "description": "Trilium 父笔记 noteId（可选）"
+    }
+  },
+  "steps": [
+    {
+      "id": "scaffold",
+      "uses": "typst.scaffold",
+      "args": {
+        "targetDir": "${run.dir}",
+        "template": "${inputs.template}",
+        "title": "${inputs.title}",
+        "authors": [
+          "${inputs.author}"
+        ]
+      }
+    },
+    {
+      "id": "write",
+      "uses": "checkpoint",
+      "args": {
+        "message": "请在 main.typ 中完成幻灯片/海报内容（每页一个 #slide 或自由排版）。完成后调用 pipeline_run { runId } 继续。",
+        "files": [
+          "${run.dir}/main.typ"
+        ]
+      }
+    },
+    {
+      "id": "build",
+      "uses": "typst.build",
+      "args": {
+        "input": "${run.dir}/main.typ",
+        "root": "${run.dir}",
+        "heal": true
+      }
+    },
+    {
+      "id": "export",
+      "uses": "typst.export",
+      "args": {
+        "input": "${run.dir}/main.typ",
+        "format": "png",
+        "outDir": "${run.dir}/slides",
+        "ppi": 144
+      }
+    },
+    {
+      "id": "publish",
+      "uses": "trilium.publish",
+      "optional": true,
+      "args": {
+        "parentNoteId": "${inputs.parentNoteId}",
+        "title": "${inputs.title}",
+        "attach": "${steps.build.outputPath}"
+      }
+    },
+    {
+      "id": "report",
+      "uses": "report.write",
+      "args": {}
+    }
+  ]
+}

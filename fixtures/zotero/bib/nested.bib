@@ -1,0 +1,26 @@
+% Nested braces, quoted values, @string macros, comments and concatenation.
+% Parser expectations: 2 entries, 0 errors, at least one @string warning.
+
+@string{jacm = {Journal of the ACM}}
+
+@comment{This whole entry is a comment and must be ignored}
+
+@preamble{"\newcommand{\noop}[1]{}"}
+
+@article{nested2021braces,
+  title = {The {DNA} of {BibTeX}: {Nested {Braces}} Explained},
+  author = "O'Brien, Pat and {World Health Organization}",
+  journal = jacm,
+  year = 2021,
+  month = jan,
+  note = {A "quoted" word and an escaped \{brace\}},
+  keywords = {parsing} # { and } # {indexing},
+  crossref = {parent2020}
+}
+
+@inproceedings{nested1999quotes,
+  Author = {Nguyễn, Thị Hương},
+  TITLE = "Việt Nam: {UTF-8} and Unicode author names",
+  BOOKTITLE = {Proceedings of the 1999 {Inkstone} Symposium},
+  YEAR = {1999}
+}

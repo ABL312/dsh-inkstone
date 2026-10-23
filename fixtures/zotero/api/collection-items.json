@@ -1,0 +1,40 @@
+{
+  "COLL0001": [
+    {
+      "key": "AAAA1111",
+      "version": 42,
+      "data": {
+        "key": "AAAA1111",
+        "version": 42,
+        "itemType": "journalArticle",
+        "title": "Inkstone: A Suite for Chinese Academic Writing",
+        "creators": [
+          { "creatorType": "author", "firstName": "Xiao", "lastName": "Wang" },
+          { "creatorType": "author", "firstName": "Ming", "lastName": "李" }
+        ],
+        "date": "2024-05-01",
+        "publicationTitle": "Journal of Academic Tooling",
+        "DOI": "10.1000/inkstone.2024.001",
+        "tags": [{ "tag": "inkstone" }],
+        "collections": ["COLL0001"]
+      }
+    }
+  ],
+  "COLL0002": [
+    {
+      "key": "BBBB2222",
+      "version": 7,
+      "data": {
+        "key": "BBBB2222",
+        "version": 7,
+        "itemType": "book",
+        "title": "Typography in Practice",
+        "creators": [{ "creatorType": "editor", "firstName": "Hua", "lastName": "Li" }],
+        "date": "2023",
+        "publisher": "Science Press",
+        "tags": [{ "tag": "typography" }],
+        "collections": ["COLL0002"]
+      }
+    }
+  ]
+}

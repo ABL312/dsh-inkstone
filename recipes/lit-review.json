@@ -1,0 +1,60 @@
+{
+  "id": "lit-review",
+  "title": "文献综述/读书笔记",
+  "description": "Zotero 检索/导出文献 → 生成 Markdown 综述笔记 → 可选归档到 Trilium → 运行报告。",
+  "scenario": "literature",
+  "inputs": {
+    "topic": { "type": "string", "required": true, "description": "综述主题" },
+    "collection": { "type": "string", "description": "Zotero collection 名称或 key（可选）" },
+    "limit": { "type": "number", "default": 30, "description": "最多纳入的文献条数" },
+    "bibPath": { "type": "string", "description": "已有 .bib 文件路径（可选）" },
+    "parentNoteId": { "type": "string", "description": "Trilium 父笔记 noteId（可选）" }
+  },
+  "steps": [
+    {
+      "id": "collect",
+      "uses": "zotero.select",
+      "optional": true,
+      "args": { "q": "${inputs.topic}", "collection": "${inputs.collection}", "limit": "${inputs.limit}" }
+    },
+    {
+      "id": "bib-export",
+      "uses": "zotero.bib.export",
+      "optional": true,
+      "args": {
+        "outPath": "${run.dir}/refs.bib",
+        "collection": "${inputs.collection}",
+        "itemKeys": "${steps.collect.keys}",
+        "limit": "${inputs.limit}"
+      }
+    },
+    {
+      "id": "bib-adopt",
+      "uses": "files.copy",
+      "optional": true,
+      "args": { "from": "${inputs.bibPath}", "to": "${run.dir}/refs.bib" }
+    },
+    {
+      "id": "compose",
+      "uses": "litreview.compose",
+      "args": {
+        "topic": "${inputs.topic}",
+        "items": "${steps.collect.items}",
+        "outPath": "${run.dir}/review.md"
+      }
+    },
+    {
+      "id": "publish",
+      "uses": "trilium.publish",
+      "optional": true,
+      "args": {
+        "parentNoteId": "${inputs.parentNoteId}",
+        "title": "${inputs.topic} · 文献综述",
+        "contentFile": "${run.dir}/review.md",
+        "attach": "${run.dir}/refs.bib",
+        "tags": ["inkstone/litreview"]
+      }
+    },
+    { "id": "report", "uses": "report.write", "args": {} }
+  ]
+}

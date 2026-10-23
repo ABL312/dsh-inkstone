@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Brush · Typst Typesetting",
+    "description": "Typst CLI compilation and export (PDF/SVG/PNG), rule-based self-healing builds, Chinese templates and font probing."
+  }
+}

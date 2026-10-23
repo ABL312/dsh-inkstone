@@ -1,0 +1,125 @@
+[
+  {
+    "key": "AAAA1111",
+    "version": 42,
+    "library": { "type": "user", "id": 0, "name": "fixture" },
+    "data": {
+      "key": "AAAA1111",
+      "version": 42,
+      "itemType": "journalArticle",
+      "title": "Inkstone: A Suite for Chinese Academic Writing",
+      "creators": [
+        { "creatorType": "author", "firstName": "Xiao", "lastName": "Wang" },
+        { "creatorType": "author", "firstName": "Ming", "lastName": "李" },
+        { "creatorType": "author", "firstName": "Anna", "lastName": "Müller" }
+      ],
+      "date": "2024-05-01",
+      "publicationTitle": "Journal of Academic Tooling",
+      "volume": "12",
+      "issue": "3",
+      "pages": "101-120",
+      "DOI": "10.1000/inkstone.2024.001",
+      "url": "https://example.org/inkstone",
+      "abstractNote": "A fixture abstract about Chinese academic writing.",
+      "language": "en",
+      "tags": [{ "tag": "inkstone" }, { "tag": "tooling" }],
+      "collections": ["COLL0001"],
+      "dateAdded": "2024-06-01 10:00:00",
+      "dateModified": "2024-06-02 11:00:00",
+      "extra": "Citation Key: wang2024inkstone",
+      "citationKey": "wang2024inkstone"
+    }
+  },
+  {
+    "key": "BBBB2222",
+    "version": 7,
+    "data": {
+      "key": "BBBB2222",
+      "version": 7,
+      "itemType": "book",
+      "title": "Typography in Practice",
+      "creators": [{ "creatorType": "editor", "firstName": "Hua", "lastName": "Li" }],
+      "date": "2023",
+      "publisher": "Science Press",
+      "place": "Beijing",
+      "ISBN": "978-7-0000-0000-0",
+      "tags": [{ "tag": "typography" }],
+      "collections": ["COLL0002"]
+    }
+  },
+  {
+    "key": "CCCC3333",
+    "version": 3,
+    "data": {
+      "key": "CCCC3333",
+      "version": 3,
+      "itemType": "conferencePaper",
+      "title": "Citations at Scale",
+      "creators": [{ "creatorType": "author", "firstName": "Wei", "lastName": "Chen" }],
+      "date": "2022",
+      "proceedingsTitle": "Proceedings of the Inkstone Conference",
+      "conferenceName": "InkstoneConf 2022",
+      "pages": "1-10",
+      "DOI": "10.1000/inkstone.2022.007",
+      "tags": [{ "tag": "citations" }]
+    }
+  },
+  {
+    "key": "DDDD7777",
+    "version": 5,
+    "data": {
+      "key": "DDDD7777",
+      "version": 5,
+      "itemType": "journalArticle",
+      "title": "Deep Learning for Citation Parsing",
+      "creators": [{ "creatorType": "author", "firstName": "Lei", "lastName": "Zhang" }],
+      "date": "2018-01-01",
+      "publicationTitle": "Journal of Natural Language Processing",
+      "volume": "7",
+      "pages": "1-20",
+      "DOI": "10.1000/cite.2018.001",
+      "tags": [{ "tag": "diffusion" }]
+    }
+  },
+  {
+    "key": "ATTA4444",
+    "version": 2,
+    "data": {
+      "key": "ATTA4444",
+      "version": 2,
+      "itemType": "attachment",
+      "parentItem": "AAAA1111",
+      "linkMode": "imported_file",
+      "title": "Full Text PDF",
+      "contentType": "application/pdf",
+      "filename": "wang-2024-inkstone.pdf"
+    }
+  },
+  {
+    "key": "NOTE5555",
+    "version": 1,
+    "data": {
+      "key": "NOTE5555",
+      "version": 1,
+      "itemType": "note",
+      "parentItem": "AAAA1111",
+      "note": "<p>Reading notes: check <b>section 3</b> on citekeys.</p>"
+    }
+  },
+  {
+    "key": "ANNO6666",
+    "version": 1,
+    "data": {
+      "key": "ANNO6666",
+      "version": 1,
+      "itemType": "annotation",
+      "parentItem": "ATTA4444",
+      "annotationType": "highlight",
+      "annotationText": "Inkstone matters",
+      "annotationComment": "Key claim for the paper",
+      "annotationPageLabel": "3",
+      "annotationColor": "#ffd400",
+      "dateModified": "2024-06-03 09:00:00"
+    }
+  }
+]

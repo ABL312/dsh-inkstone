@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Ink · Zotero Library",
+    "description": "Zotero through the local API and Better BibTeX: search, citekeys and .bib index/export/merge/validate, PDF text and annotations, online metadata enrichment; optional Web API write-back with an API key."
+  }
+}

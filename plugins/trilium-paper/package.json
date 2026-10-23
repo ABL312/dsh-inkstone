@@ -1,0 +1,6 @@
+{
+  "name": "纸 · Trilium Notes",
+  "description": "通过 ETAPI 与官方 MCP 联动 Trilium Notes：检索、读写笔记、上传附件、属性与历史。",
+  "icon": "./icon.svg",
+  "type": "module"
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="220" viewBox="0 0 480 220">
+  <rect width="480" height="220" fill="#fbfbfb"/>
+  <line x1="24" y1="190" x2="456" y2="190" stroke="#b0b0b0" stroke-width="1"/>
+  <rect x="44" y="120" width="72" height="70" rx="6" fill="#4a6fa5"/>
+  <rect x="148" y="92" width="72" height="98" rx="6" fill="#6b8cae"/>
+  <rect x="252" y="64" width="72" height="126" rx="6" fill="#8aa9c4"/>
+  <rect x="356" y="36" width="72" height="154" rx="6" fill="#a9c0d6"/>
+  <line x1="118" y1="155" x2="146" y2="141" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="222" y1="141" x2="250" y2="127" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="326" y1="127" x2="354" y2="113" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#555"/>
+    </marker>
+  </defs>
+  <circle cx="80" cy="40" r="10" fill="#c9a227"/>
+  <circle cx="120" cy="40" r="10" fill="#c9a227" opacity="0.7"/>
+  <circle cx="160" cy="40" r="10" fill="#c9a227" opacity="0.4"/>
+</svg>

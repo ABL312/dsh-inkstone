@@ -1,0 +1,6 @@
+{
+  "name": "笔 · Typst 排版",
+  "description": "Typst CLI 编译与导出（PDF/SVG/PNG），规则化自愈编译，中文模板与字体探测。",
+  "icon": "./icon.svg",
+  "type": "module"
+}

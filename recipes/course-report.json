@@ -1,0 +1,99 @@
+{
+  "id": "course-report",
+  "title": "课程论文/实验报告",
+  "description": "中文报告模板脚手架 → 人工/模型写作（检查点）→ Typst 自愈编译 → PNG 预览 → 可选发布到 Trilium → 运行报告。",
+  "scenario": "report",
+  "inputs": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "description": "报告题目"
+    },
+    "author": {
+      "type": "string",
+      "description": "作者（可选）"
+    },
+    "bibPath": {
+      "type": "string",
+      "description": "已有 .bib 文件路径（可选）"
+    },
+    "template": {
+      "type": "string",
+      "default": "report-zh",
+      "description": "Typst 模板"
+    },
+    "parentNoteId": {
+      "type": "string",
+      "description": "Trilium 父笔记 noteId（可选）"
+    }
+  },
+  "steps": [
+    {
+      "id": "bib-adopt",
+      "uses": "files.copy",
+      "optional": true,
+      "args": {
+        "from": "${inputs.bibPath}",
+        "to": "${run.dir}/refs.bib"
+      }
+    },
+    {
+      "id": "scaffold",
+      "uses": "typst.scaffold",
+      "args": {
+        "targetDir": "${run.dir}",
+        "template": "${inputs.template}",
+        "title": "${inputs.title}",
+        "authors": [
+          "${inputs.author}"
+        ],
+        "bibPath": "refs.bib"
+      }
+    },
+    {
+      "id": "write",
+      "uses": "checkpoint",
+      "args": {
+        "message": "请完成报告正文（实验目的/方法/结果/讨论/结论），保存到 main.typ。完成后调用 pipeline_run { runId } 继续。",
+        "files": [
+          "${run.dir}/main.typ"
+        ]
+      }
+    },
+    {
+      "id": "build",
+      "uses": "typst.build",
+      "args": {
+        "input": "${run.dir}/main.typ",
+        "root": "${run.dir}",
+        "heal": true
+      }
+    },
+    {
+      "id": "preview",
+      "uses": "typst.export",
+      "optional": true,
+      "args": {
+        "input": "${run.dir}/main.typ",
+        "format": "png",
+        "outDir": "${run.dir}/preview",
+        "pages": "1-2"
+      }
+    },
+    {
+      "id": "publish",
+      "uses": "trilium.publish",
+      "optional": true,
+      "args": {
+        "parentNoteId": "${inputs.parentNoteId}",
+        "title": "${inputs.title}",
+        "attach": "${steps.build.outputPath}"
+      }
+    },
+    {
+      "id": "report",
+      "uses": "report.write",
+      "args": {}
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "paper-delivery",
+  "title": "期刊/会议论文交付",
+  "description": "Zotero 取文献导出 .bib → 脚手架中文论文模板 → 人工/模型写作（检查点）→ Typst 自愈编译 → PNG 预览 → 发布到 Trilium → 运行报告。",
+  "scenario": "paper",
+  "inputs": {
+    "topic": {
+      "type": "string",
+      "required": true,
+      "description": "论文题目"
+    },
+    "collection": {
+      "type": "string",
+      "description": "Zotero collection 名称或 key（可选）"
+    },
+    "bibPath": {
+      "type": "string",
+      "description": "已有 .bib 文件路径（可选，优先于 Zotero 导出）"
+    },
+    "template": {
+      "type": "string",
+      "default": "paper-zh",
+      "description": "Typst 模板"
+    },
+    "citationStyle": {
+      "type": "string",
+      "default": "gb-7714-2015-numeric",
+      "description": "引用样式名"
+    },
+    "authors": {
+      "type": "array",
+      "description": "作者列表（可选）"
+    },
+    "abstract": {
+      "type": "string",
+      "description": "摘要（可选）"
+    },
+    "parentNoteId": {
+      "type": "string",
+      "description": "Trilium 父笔记 noteId（可选）"
+    }
+  },
+  "steps": [
+    {
+      "id": "bib-export",
+      "uses": "zotero.bib.export",
+      "optional": true,
+      "args": {
+        "outPath": "${run.dir}/refs.bib",
+        "collection": "${inputs.collection}"
+      }
+    },
+    {
+      "id": "bib-adopt",
+      "uses": "files.copy",
+      "optional": true,
+      "args": {
+        "from": "${inputs.bibPath}",
+        "to": "${run.dir}/refs.bib"
+      }
+    },
+    {
+      "id": "scaffold",
+      "uses": "typst.scaffold",
+      "args": {
+        "targetDir": "${run.dir}",
+        "template": "${inputs.template}",
+        "title": "${inputs.topic}",
+        "authors": "${inputs.authors}",
+        "abstract": "${inputs.abstract}",
+        "bibPath": "refs.bib",
+        "citationStyle": "${inputs.citationStyle}"
+      }
+    },
+    {
+      "id": "write",
+      "uses": "checkpoint",
+      "args": {
+        "message": "请在 main.typ 中完成论文正文（标题/摘要/章节/图表/引用）。引用键应来自 refs.bib；可用 typst_probe 查看字体与工具状态，用 typst_build 预览编译。完成后调用 pipeline_run { runId } 继续。",
+        "files": [
+          "${run.dir}/main.typ",
+          "${run.dir}/refs.bib"
+        ]
+      }
+    },
+    {
+      "id": "build",
+      "uses": "typst.build",
+      "args": {
+        "input": "${run.dir}/main.typ",
+        "root": "${run.dir}",
+        "heal": true
+      }
+    },
+    {
+      "id": "preview",
+      "uses": "typst.export",
+      "optional": true,
+      "args": {
+        "input": "${run.dir}/main.typ",
+        "format": "png",
+        "outDir": "${run.dir}/preview",
+        "pages": "1-3"
+      }
+    },
+    {
+      "id": "publish",
+      "uses": "trilium.publish",
+      "optional": true,
+      "args": {
+        "parentNoteId": "${inputs.parentNoteId}",
+        "title": "${inputs.topic}",
+        "attach": "${steps.build.outputPath}"
+      }
+    },
+    {
+      "id": "report",
+      "uses": "report.write",
+      "args": {}
+    }
+  ]
+}

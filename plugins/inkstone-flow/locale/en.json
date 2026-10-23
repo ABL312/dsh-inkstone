@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Inkstone · Joint Pipeline",
+    "description": "A reproducible engineering pipeline over Zotero literature, Typst typesetting and Trilium archives: recipe engine, checkpoint resume and run records."
+  }
+}

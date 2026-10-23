@@ -1,0 +1,6 @@
+{
+  "name": "墨 · Zotero 文献",
+  "description": "本地 API 与 Better BibTeX 联动 Zotero：文献检索、citekey 与 .bib 索引/导出/合并/校验、PDF 全文与批注、在线元数据补全；配置 API key 后可经 Web API 写回。",
+  "icon": "./icon.svg",
+  "type": "module"
+}

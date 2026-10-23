@@ -1,0 +1,28 @@
+{
+  "noteAlpha": [
+    {
+      "attachmentId": "att1",
+      "ownerId": "noteAlpha",
+      "role": "file",
+      "mime": "application/pdf",
+      "title": "draft.pdf",
+      "position": 10,
+      "blobId": "blobAtt1",
+      "dateModified": "2026-10-23 12:00:00.000+0800",
+      "utcDateModified": "2026-10-23 04:00:00.000Z",
+      "contentLength": 7
+    },
+    {
+      "attachmentId": "att2",
+      "ownerId": "noteAlpha",
+      "role": "file",
+      "mime": "text/markdown",
+      "title": "notes.md",
+      "position": 20,
+      "blobId": "blobAtt2",
+      "dateModified": "2026-10-23 12:30:00.000+0800",
+      "utcDateModified": "2026-10-23 04:30:00.000Z",
+      "contentLength": 11
+    }
+  ]
+}

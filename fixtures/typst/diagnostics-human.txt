@@ -1,0 +1,14 @@
+error: file not found (searched at \\?\C:\proj\figures\missing.png)
+  ┌─ \\?\C:\proj\main.typ:3:7
+  │
+3 │ #image("figures/missing.png")
+  │        ^^^^^^^^^^^^^^^^^^^^^
+
+  while including `sub.typ` at \\?\C:\proj\parent.typ:2:1
+    include "sub.typ"
+
+warning: unknown font family: nofontc
+  ┌─ \\?\C:\proj\main.typ:1:16
+  │
+1 │ #set text(font: "NoFontC")
+  │                 ^^^^^^^^^

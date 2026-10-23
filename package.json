@@ -1,0 +1,79 @@
+{
+  "name": "dsh-inkstone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "文房四宝 · Inkstone: a DeepSeek Harness plugin bundle for Trilium Notes, Zotero, Typst typesetting and a joint engineering pipeline.",
+  "license": "MIT",
+  "author": {
+    "name": "Tostar.King"
+  },
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "trilium",
+    "trilium-notes",
+    "zotero",
+    "bibtex",
+    "typst",
+    "mcp",
+    "literature-review",
+    "typesetting",
+    "pipeline"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABL312/dsh-inkstone.git"
+  },
+  "homepage": "https://github.com/ABL312/dsh-inkstone#readme",
+  "bugs": {
+    "url": "https://github.com/ABL312/dsh-inkstone/issues"
+  },
+  "scripts": {
+    "test": "node scripts/test-all.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./trilium-paper": "./plugins/trilium-paper/index.js",
+    "./trilium-paper/package.json": "./plugins/trilium-paper/package.json",
+    "./trilium-paper/locale/*.json": "./plugins/trilium-paper/locale/*.json",
+    "./trilium-paper/icon": "./plugins/trilium-paper/icon.svg",
+    "./zotero-ink": "./plugins/zotero-ink/index.js",
+    "./zotero-ink/package.json": "./plugins/zotero-ink/package.json",
+    "./zotero-ink/locale/*.json": "./plugins/zotero-ink/locale/*.json",
+    "./zotero-ink/icon": "./plugins/zotero-ink/icon.svg",
+    "./typst-brush": "./plugins/typst-brush/index.js",
+    "./typst-brush/package.json": "./plugins/typst-brush/package.json",
+    "./typst-brush/locale/*.json": "./plugins/typst-brush/locale/*.json",
+    "./typst-brush/icon": "./plugins/typst-brush/icon.svg",
+    "./inkstone-flow": "./plugins/inkstone-flow/index.js",
+    "./inkstone-flow/package.json": "./plugins/inkstone-flow/package.json",
+    "./inkstone-flow/locale/*.json": "./plugins/inkstone-flow/locale/*.json",
+    "./inkstone-flow/icon": "./plugins/inkstone-flow/icon.svg",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "plugins/**",
+    "lib/**",
+    "templates/**",
+    "recipes/**",
+    "docs/**",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

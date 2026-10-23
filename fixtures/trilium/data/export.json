@@ -1,0 +1,6 @@
+{
+  "noteAlpha": {
+    "markdown": "# Paper Draft\n\nDraft body with **bold** text.\n",
+    "html": "<h1>Paper Draft</h1>\n<p>Draft body with <strong>bold</strong> text.</p>\n"
+  }
+}

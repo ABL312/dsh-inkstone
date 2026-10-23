@@ -1,0 +1,8 @@
+node_modules/
+.inkstone/
+**/.inkstone/
+fixtures/**/_tmp/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

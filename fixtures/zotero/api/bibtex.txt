@@ -1,0 +1,17 @@
+@article{wang2024inkstone,
+	title = {Inkstone: A Suite for {Chinese} Academic Writing},
+	author = {Wang, Xiao and 李, Ming and Müller, Anna},
+	journal = {Journal of Academic Tooling},
+	year = {2024},
+	volume = {12},
+	number = {3},
+	pages = {101--120},
+	doi = {10.1000/inkstone.2024.001}
+}
+
+@book{li2023typography,
+	title = {Typography in Practice},
+	editor = {Li, Hua},
+	publisher = {Science Press},
+	year = {2023}
+}

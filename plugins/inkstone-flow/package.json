@@ -1,0 +1,6 @@
+{
+  "name": "砚 · 联合流水线",
+  "description": "把 Zotero 文献、Typst 排版与 Trilium 归档串成可复现的工程流水线：配方引擎 + 检查点续跑 + 运行记录。",
+  "icon": "./icon.svg",
+  "type": "module"
+}

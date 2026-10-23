@@ -1,0 +1,34 @@
+{
+  "noteAlpha": [
+    {
+      "revisionId": "rev2",
+      "noteId": "noteAlpha",
+      "type": "text",
+      "mime": "text/html",
+      "isProtected": false,
+      "title": "Paper Draft",
+      "blobId": "blobRev2",
+      "dateLastEdited": "2026-10-21 10:00:00.000+0800",
+      "dateCreated": "2026-10-21 09:00:00.000+0800",
+      "utcDateLastEdited": "2026-10-21 02:00:00.000Z",
+      "utcDateCreated": "2026-10-21 01:00:00.000Z",
+      "utcDateModified": "2026-10-21 02:00:00.000Z",
+      "contentLength": 30
+    },
+    {
+      "revisionId": "rev1",
+      "noteId": "noteAlpha",
+      "type": "text",
+      "mime": "text/html",
+      "isProtected": false,
+      "title": "Paper Draft",
+      "blobId": "blobRev1",
+      "dateLastEdited": "2026-10-22 10:00:00.000+0800",
+      "dateCreated": "2026-10-22 09:00:00.000+0800",
+      "utcDateLastEdited": "2026-10-22 02:00:00.000Z",
+      "utcDateCreated": "2026-10-22 01:00:00.000Z",
+      "utcDateModified": "2026-10-22 02:00:00.000Z",
+      "contentLength": 24
+    }
+  ]
+}

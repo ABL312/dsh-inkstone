@@ -1,0 +1,22 @@
+[
+  {
+    "key": "COLL0001",
+    "version": 3,
+    "data": {
+      "key": "COLL0001",
+      "version": 3,
+      "name": "Inkstone Papers",
+      "parentCollection": false
+    }
+  },
+  {
+    "key": "COLL0002",
+    "version": 2,
+    "data": {
+      "key": "COLL0002",
+      "version": 2,
+      "name": "Typography",
+      "parentCollection": false
+    }
+  }
+]

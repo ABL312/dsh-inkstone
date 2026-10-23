@@ -1,0 +1,2 @@
+\\?\C:\proj\main.typ:2:7: error: file not found (searched at \\?\C:\proj\missing.png)
+\\?\C:\proj\main.typ:1:16: warning: unknown font family: nofontc

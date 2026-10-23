@@ -1,0 +1,119 @@
+{
+  "root": {
+    "noteId": "root",
+    "title": "root",
+    "type": "book",
+    "mime": "",
+    "isProtected": false,
+    "blobId": "",
+    "attributes": [],
+    "parentNoteIds": [],
+    "childNoteIds": ["parentNote1", "noteBeta"],
+    "parentBranchIds": [],
+    "childBranchIds": ["branchRoot1", "branchRoot2"],
+    "dateCreated": "2026-10-01 09:00:00.000+0800",
+    "dateModified": "2026-10-23 20:00:00.000+0800",
+    "utcDateCreated": "2026-10-01 01:00:00.000Z",
+    "utcDateModified": "2026-10-23 12:00:00.000Z"
+  },
+  "parentNote1": {
+    "noteId": "parentNote1",
+    "title": "Inkstone 项目",
+    "type": "text",
+    "mime": "text/html",
+    "isProtected": false,
+    "blobId": "blobParent1",
+    "attributes": [
+      {
+        "attributeId": "attrProject",
+        "noteId": "parentNote1",
+        "type": "label",
+        "name": "inkstone/project",
+        "value": "paper",
+        "position": 10,
+        "isInheritable": true,
+        "utcDateModified": "2026-10-23 12:00:00.000Z"
+      }
+    ],
+    "parentNoteIds": ["root"],
+    "childNoteIds": ["noteAlpha"],
+    "parentBranchIds": ["branchRoot1"],
+    "childBranchIds": ["branchParent1"],
+    "dateCreated": "2026-10-02 09:00:00.000+0800",
+    "dateModified": "2026-10-23 20:30:00.000+0800",
+    "utcDateCreated": "2026-10-02 01:00:00.000Z",
+    "utcDateModified": "2026-10-23 12:30:00.000Z"
+  },
+  "noteAlpha": {
+    "noteId": "noteAlpha",
+    "title": "Paper Draft",
+    "type": "text",
+    "mime": "text/html",
+    "isProtected": false,
+    "blobId": "blobAlpha",
+    "attributes": [
+      {
+        "attributeId": "attrStatus",
+        "noteId": "noteAlpha",
+        "type": "label",
+        "name": "inkstone/status",
+        "value": "draft",
+        "position": 10,
+        "isInheritable": false,
+        "utcDateModified": "2026-10-23 13:00:00.000Z"
+      },
+      {
+        "attributeId": "attrRelation",
+        "noteId": "noteAlpha",
+        "type": "relation",
+        "name": "inkstone/review",
+        "value": "noteBeta",
+        "position": 20,
+        "isInheritable": false,
+        "utcDateModified": "2026-10-23 13:00:00.000Z"
+      }
+    ],
+    "parentNoteIds": ["parentNote1"],
+    "childNoteIds": [],
+    "parentBranchIds": ["branchParent1"],
+    "childBranchIds": [],
+    "dateCreated": "2026-10-20 09:30:00.000+0800",
+    "dateModified": "2026-10-23 21:00:00.000+0800",
+    "utcDateCreated": "2026-10-20 01:30:00.000Z",
+    "utcDateModified": "2026-10-23 13:00:00.000Z"
+  },
+  "noteBeta": {
+    "noteId": "noteBeta",
+    "title": "Orphan Child",
+    "type": "text",
+    "mime": "text/html",
+    "isProtected": false,
+    "blobId": "blobBeta",
+    "attributes": [],
+    "parentNoteIds": ["root"],
+    "childNoteIds": [],
+    "parentBranchIds": ["branchRoot2"],
+    "childBranchIds": [],
+    "dateCreated": "2026-10-21 10:00:00.000+0800",
+    "dateModified": "2026-10-22 10:00:00.000+0800",
+    "utcDateCreated": "2026-10-21 02:00:00.000Z",
+    "utcDateModified": "2026-10-22 02:00:00.000Z"
+  },
+  "noteTrashed": {
+    "noteId": "noteTrashed",
+    "title": "Trashed Note",
+    "type": "text",
+    "mime": "text/html",
+    "isProtected": false,
+    "blobId": "blobTrashed",
+    "attributes": [],
+    "parentNoteIds": ["parentNote1"],
+    "childNoteIds": [],
+    "parentBranchIds": ["branchTrashed"],
+    "childBranchIds": [],
+    "dateCreated": "2026-10-19 10:00:00.000+0800",
+    "dateModified": "2026-10-19 11:00:00.000+0800",
+    "utcDateCreated": "2026-10-19 02:00:00.000Z",
+    "utcDateModified": "2026-10-19 03:00:00.000Z"
+  }
+}
