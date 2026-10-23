@@ -1,6 +1,6 @@
 {
   "name": "dsh-inkstone",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "文房四宝 · Inkstone: a DeepSeek Harness plugin bundle for Trilium Notes, Zotero, Typst typesetting and a joint engineering pipeline.",
   "license": "MIT",

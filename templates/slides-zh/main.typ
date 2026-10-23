@@ -30,7 +30,7 @@
   lang: "zh",
   region: "cn",
 )
-#set par(justify: true, leading: 0.72em, first-line-indent: 0em, spacing: 0.8em)
+#set par(justify: true, leading: 0.78em, first-line-indent: 0em, spacing: 0.85em)
 #set list(marker: text(fill: rgb("e8c07d"))[•], indent: 0.7em, spacing: 0.9em)
 #show figure.caption: set text(fill: rgb("9db4c8"), size: 10pt)
 
@@ -43,22 +43,27 @@
   pad(left: 12mm, right: 12mm, top: 9mm, bottom: 7mm)[
     #if heading != none [
       #text(size: 23pt, weight: "bold", fill: accent)[#heading]
-      #v(1.6mm, weak: true)
+      #v(2mm)
       #rect(width: 100%, height: 0.7pt, fill: accent)
-      #v(3.6mm, weak: true)
+      #v(4mm)
     ]
     #body
   ]
 }
 
 // ---- 封面 ---------------------------------------------------------------
-#pad(left: 16mm, right: 16mm, top: 18mm)[
-  #text(size: 32pt, weight: "bold")[#title]
-  #v(3.2mm, weak: true)
+// 标题按长度自适应字号；间距不使用 weak，避免长标题换行后与分隔线相撞。
+#pad(left: 16mm, right: 16mm, top: 16mm)[
+  #set par(justify: false, leading: 0.45em, spacing: 0.6em)
+  #text(
+    size: if title.len() > 24 { 26pt } else if title.len() > 16 { 29pt } else { 32pt },
+    weight: "bold",
+  )[#title]
+  #v(6mm)
   #rect(width: 46%, height: 1.4pt, fill: accent)
-  #v(4mm, weak: true)
+  #v(6mm)
   #text(size: 14pt, fill: muted)[#authors]
-  #v(1.6mm, weak: true)
+  #v(2mm)
   #text(size: 11pt, fill: muted)[#doc-date]
 ]
 

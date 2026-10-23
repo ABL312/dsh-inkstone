@@ -25,22 +25,38 @@
   header: align(right, text(size: 8pt, fill: gray)[实验报告模板]),
 )
 #set text(font: ("SimSun", "Microsoft YaHei"), size: 10.5pt, lang: "zh", region: "cn")
-#set par(justify: true, leading: 0.7em, spacing: 0.85em, first-line-indent: 2em)
-#set heading(numbering: "1.")
+#set par(justify: true, leading: 0.85em, spacing: 1.1em, first-line-indent: 2em)
+#set heading(numbering: "1.1")
 #set math.equation(numbering: "(1)")
-#show heading.where(level: 1): it => {
-  set text(font: ("Microsoft YaHei", "SimHei"), size: 14pt)
-  set par(first-line-indent: 0em)
-  v(0.7em, weak: true)
-  it
-  v(0.2em, weak: true)
-}
-#show heading.where(level: 2): it => {
-  set text(font: ("Microsoft YaHei", "SimHei"), size: 11.5pt)
-  set par(first-line-indent: 0em)
-  it
-}
+#set table(inset: (x: 6pt, y: 4pt))
+#set figure(gap: 0.9em)
+
+// 标题间距用 block 的 above/below 表达；不要用 weak v()，它会在块边界被折叠。
+#show heading.where(level: 1): it => block(
+  above: 1.5em,
+  below: 0.85em,
+  {
+    set text(font: ("Microsoft YaHei", "SimHei"), size: 14pt, weight: "bold")
+    set par(first-line-indent: 0em, leading: 0.55em)
+    it
+  },
+)
+#show heading.where(level: 2): it => block(
+  above: 1.15em,
+  below: 0.55em,
+  {
+    set text(font: ("Microsoft YaHei", "SimHei"), size: 11.5pt, weight: "bold")
+    set par(first-line-indent: 0em, leading: 0.55em)
+    it
+  },
+)
+#show figure: set block(above: 0.9em, below: 0.9em)
+#show figure.caption: set text(size: 9pt)
+#show bibliography: set par(first-line-indent: 0em, leading: 0.62em, spacing: 0.4em)
+#show bibliography: set text(size: 9pt)
 #show raw.where(block: true): it => block(
+  above: 0.8em,
+  below: 0.8em,
   width: 100%,
   inset: 8pt,
   fill: rgb("f2f4f6"),
@@ -51,6 +67,7 @@
 
 // ---- 标题区 -------------------------------------------------------------
 #align(center)[
+  #set par(justify: false, leading: 0.45em, spacing: 0.45em)
   #text(font: ("Microsoft YaHei", "SimHei"), size: 18pt, weight: "bold")[#title]
   #v(0.6em)
   #text(size: 11.5pt)[#authors]

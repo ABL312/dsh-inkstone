@@ -59,7 +59,12 @@
     radius: 0.35cm,
     fill: accent,
     [
-      #text(size: 64pt, weight: "bold", fill: rgb("fdfaf3"))[#title]
+      #set par(justify: false, leading: 0.45em, spacing: 0.6em)
+      #text(
+        size: if title.len() > 26 { 50pt } else if title.len() > 18 { 56pt } else { 64pt },
+        weight: "bold",
+        fill: rgb("fdfaf3"),
+      )[#title]
       #v(0.7cm, weak: true)
       #text(size: 34pt, fill: rgb("e8e0cf"))[#authors]
       #v(0.3cm, weak: true)
