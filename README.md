@@ -4,8 +4,6 @@
 
 **Topics**：`dsh-plugin` · `deepseek-harness` · `trilium-notes` · `zotero` · `typst` · `mcp` · `literature-review` · `typesetting` · `pipeline`
 
-![中文论文输出预览](docs/assets/preview.png)
-
 | 插件 | 行 id | 显示名 | 职责 |
 |---|---|---|---|
 | `trilium-paper` | `inkstone-trilium` | 纸 · Trilium Notes | ETAPI + 官方 MCP 双通道：检索、读写笔记、附件、属性、历史 |
@@ -16,6 +14,16 @@
 - 插件包名：`dsh-inkstone`（单 bundle 四行插件）
 - 仓库：[github.com/ABL312/dsh-inkstone](https://github.com/ABL312/dsh-inkstone)
 - 设计文档：[docs/DESIGN.md](docs/DESIGN.md) · 实现契约：[docs/CONTRACT.md](docs/CONTRACT.md) · 更新日志：[CHANGELOG.md](CHANGELOG.md)
+
+## 输出预览
+
+由 `paper-delivery` 流水线生成的两页中文论文示例（图、表、公式、引用编号）：
+
+![中文论文输出预览：第 1–2 页](docs/assets/preview-pages.png)
+
+第 2 页可见独立编号公式、代码块与 GB/T 7714 参考文献；公式与代码块细节：
+
+![独立编号公式、代码块与参考文献](docs/assets/preview-formula.png)
 
 ## 已具备的能力
 
