@@ -1,7 +1,6 @@
 {
   "name": "dsh-inkstone",
-  "version": "0.1.1",
-  "private": true,
+  "version": "0.1.2",
   "description": "文房四宝 · Inkstone: a DeepSeek Harness plugin bundle for Trilium Notes, Zotero, Typst typesetting and a joint engineering pipeline.",
   "license": "MIT",
   "author": {
@@ -31,6 +30,12 @@
   "homepage": "https://github.com/ABL312/dsh-inkstone#readme",
   "bugs": {
     "url": "https://github.com/ABL312/dsh-inkstone/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "scripts": {
     "test": "node scripts/test-all.mjs"
@@ -67,8 +72,9 @@
     "lib/**",
     "templates/**",
     "recipes/**",
-    "docs/**",
+    "docs/*.md",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "dsh": {

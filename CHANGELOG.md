@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.1.2 — 2026-10-23
+
+npm 发布准备。
+
+- 以 `dsh-inkstone` 名称发布到 npm registry（`publishConfig.access: public`）。
+- 打包白名单收敛为运行必需文件（插件、lib、模板、配方、文档 Markdown），排除预览图片与测试夹具。
+- README 预览图与文档链接改为 GitHub 绝对地址，npm 页面与 GitHub 页面均可正常显示；
+  新增 npm 版本徽章与 registry 安装说明。
+- `engines.node >= 22`。
+
 ## v0.1.1 — 2026-10-23
 
 排版修复：解决标题与正文贴连、英文标题被两端对齐拉散、幻灯片封面长标题与分隔线相撞的问题。
